@@ -1,0 +1,45 @@
+label{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    gap: 20px;
+}
+
+.txst {
+    color: #6f818e;
+    transition: all 0.3s ease;
+}
+
+.checked {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.element {
+    background-color: #ccd3d8;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 8px;
+}
+
+.remove__btn {
+    background-color: transparent;
+    border: none;
+    color: red;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.date__task{
+    color: #768996;
+    font-size: 10px;
+}
+
+.txst{
+    width: 48vw;
+}

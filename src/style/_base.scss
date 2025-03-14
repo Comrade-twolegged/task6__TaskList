@@ -1,0 +1,16 @@
+:root{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+$max-width: 1000px;
+$padding: 15px;
+
+.container {
+    margin: 0 auto;
+    padding: 0 $padding;
+    max-width: $max-width;
+
+    &--sm {
+        max-width: 840px;
+    }
+}
