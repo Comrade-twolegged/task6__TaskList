@@ -28,12 +28,16 @@ export default function List({ onTaskChange }) {
         const date = currentDate.toLocaleTimeString();
         const uniqueId = Date.now().toString(36) + Math.random().toString(36).substring(2);
         const taskData = new FormData(e.target);
-        const newTask = {
-            task: taskData.get("task"),
-            id: uniqueId,
-            date: date,
-            isChecked: false
+
+        if(taskData.get("task") !== " "){
+            const newTask = {
+                task: taskData.get("task"),
+                id: uniqueId,
+                date: date,
+                isChecked: false
+            }
         }
+        
         e.target.reset();
         setArrTask([...arrTask, newTask]);
     }
