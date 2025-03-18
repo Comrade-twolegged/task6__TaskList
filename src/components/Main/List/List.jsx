@@ -29,17 +29,16 @@ export default function List({ onTaskChange }) {
         const uniqueId = Date.now().toString(36) + Math.random().toString(36).substring(2);
         const taskData = new FormData(e.target);
 
-        if(taskData.get("task") !== " "){
+        if (taskData.get("task").trim() !== "") {
             const newTask = {
                 task: taskData.get("task"),
                 id: uniqueId,
                 date: date,
                 isChecked: false
-            }
+            };
+            e.target.reset();
+            setArrTask([...arrTask, newTask]);
         }
-        
-        e.target.reset();
-        setArrTask([...arrTask, newTask]);
     }
 
     function onRemove(id) {
@@ -52,8 +51,8 @@ export default function List({ onTaskChange }) {
         ));
     }
 
-    function editTask(id, newText){
-        setArrTask(arrTask.map((task) => task.id == id ? {...task, task: newText} : task));
+    function editTask(id, newText) {
+        setArrTask(arrTask.map((task) => task.id == id ? { ...task, task: newText } : task));
     }
     return (
         <div className="list">
