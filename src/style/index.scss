@@ -1,5 +1,7 @@
-@import "./reset";
-@import "./base";
+@use "./reset";
+@use "./base";
 
-
+body{
+    background-color: rgb(191, 200, 200);
+}
 

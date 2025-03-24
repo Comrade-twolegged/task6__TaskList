@@ -1,0 +1,61 @@
+.modalWindow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    pointer-events: auto;
+}
+
+.contentModalWindow {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 450px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.titleModalWindow{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.bttons{
+    display: grid;
+    gap: 5px;
+}
+
+.btn{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.agree{
+    border: 1px solid black;
+    font-weight: 50;
+}
+
+.refuse{
+    background-color: rgb(88, 126, 88);
+    color: white;
+}
+
+.back{
+    position: absolute;
+    color: red;
+    font-weight: bold;
+    left: 63%;
+    top: 36%;
+}

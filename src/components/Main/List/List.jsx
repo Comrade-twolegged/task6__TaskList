@@ -2,6 +2,7 @@ import { useState } from "react"
 import Task from "./Task/Task";
 import { useEffect } from "react";
 import "./List.scss"
+import ModalWindow from "../ModalWindow/ModalWindow";
 
 export default function List({ onTaskChange }) {
     const [arrTask, setArrTask] = useState(() => {
@@ -54,11 +55,12 @@ export default function List({ onTaskChange }) {
     function editTask(id, newText) {
         setArrTask(arrTask.map((task) => task.id == id ? { ...task, task: newText } : task));
     }
+
     return (
         <div className="list">
             <form onSubmit={submit}>
                 <input className="inputTask" name="task" type="text" placeholder="task name" required />
-                <button className="bttn__list" type="submit">List</button>
+                <button className="bttn__list" type="submit">Enter</button>
             </form>
 
             <div className="task">
