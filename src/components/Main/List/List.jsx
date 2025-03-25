@@ -2,9 +2,11 @@ import { useState } from "react"
 import Task from "./Task/Task";
 import { useEffect } from "react";
 import "./List.scss"
-import ModalWindow from "../ModalWindow/ModalWindow";
+import { useTaskNum } from "../../../context/CountTaskContext";
 
-export default function List({ onTaskChange }) {
+export default function List() {
+    const {transferTaskNumber} = useTaskNum();
+
     const [arrTask, setArrTask] = useState(() => {
         const savedTasks = JSON.parse(localStorage.getItem("task"));
         if (savedTasks) {
@@ -20,8 +22,8 @@ export default function List({ onTaskChange }) {
 
     useEffect(() => {
         const uncompletedTasks = arrTask.filter(task => !task.isChecked);
-        onTaskChange(uncompletedTasks.length);
-    }, [arrTask, onTaskChange]);
+        transferTaskNumber(uncompletedTasks.length);
+    }, [arrTask, transferTaskNumber]);
 
     function submit(e) {
         e.preventDefault();

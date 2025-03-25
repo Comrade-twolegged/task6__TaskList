@@ -1,10 +1,13 @@
 import Main from './components/Main/Main'
+import CountTaskProvider from './context/CountTaskContext'
 
 function App() {
 
   return (
     <>
-      <Main></Main>
+      <CountTaskProvider>
+        <Main />
+      </CountTaskProvider>
     </>
   )
 }
